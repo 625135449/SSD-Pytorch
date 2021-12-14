@@ -1,5 +1,6 @@
 import os
 import random
+from tqdm import tqdm
 
 trainval_percent = 0.66
 train_percent = 0.5
@@ -19,7 +20,7 @@ ftest = open('ImageSets/Main/test.txt', 'w')
 ftrain = open('ImageSets/Main/train.txt', 'w')
 fval = open('ImageSets/Main/val.txt', 'w')
 
-for i in list:
+for i in tqdm(list):
     name = total_xml[i][:-4] + '\n'
     if i in trainval:
         ftrainval.write(name)
