@@ -51,17 +51,18 @@ def cv2_demo(net, transform):
                               COLORS[i % 3], 2)
                 cv2.putText(frame, labelmap[i - 1] + '_' + str(score)[:4], (int(pt[0]), int(pt[1])),
                             FONT, 1, (255, 0, 255), 2, cv2.LINE_AA)
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
                 j += 1
 
         return frame
 
     frame = cv2.imread('/media/vs/qi/data/ssd.pytorch/doc/helmet01.jpg')
     frame = predict(frame)
+    frame2 = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     # cv2.imwrite('/home/fei/ssd.pytorch/doc/helmet02.jpg',frame)
     IMAGE_SIZE = (12, 8)
     plt.figure(figsize=IMAGE_SIZE)
-    plt.imshow(frame)
+    plt.imshow(frame2)
     plt.show()
 
 
